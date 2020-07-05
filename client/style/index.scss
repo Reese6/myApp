@@ -1,4 +1,2 @@
-body {
-  background-color: black;
-  user-select: none;
-}
+@import '~normalize.scss';
+@import './base';
