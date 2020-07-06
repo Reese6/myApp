@@ -11,6 +11,12 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, './main/static/main/bundles'),
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './client/js/react'),
+      '~': path.resolve(__dirname, './client/js/react'),
+    },
+  },
   optimization: {
     splitChunks: {
       cacheGroups: {
