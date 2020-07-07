@@ -30,6 +30,10 @@ module.exports = {
       },
     },
   },
+  devServer: {
+    writeToDisk: true,
+    hot: true,
+  },
   plugins: [
     new MiniCssPlugin({
       filename: '[name].css',
