@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UserRegister
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -17,6 +18,7 @@ def register(request):
       username = form.cleaned_data['username']
       password = form.cleaned_data['password']
       email = request.POST.get('email')
+
   else:
     form = UserRegisterForm()
 
