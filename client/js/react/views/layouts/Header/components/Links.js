@@ -6,7 +6,7 @@ export default function Links() {
   return (
     <nav className="header__nav">
       {urls.map(({ url, name }, i) => (
-        <a href={url} className="nav__link">{name}</a>
+        <a href={url} key={i} className="header__nav-link">{name}</a>
       ))}
     </nav>
   )

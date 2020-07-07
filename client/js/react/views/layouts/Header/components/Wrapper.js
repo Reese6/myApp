@@ -4,7 +4,9 @@ import * as TYPES from 'prop-types';
 function Wrapper({ children }) {
   return (
     <header className="header">
-      {children}
+      <div className="header__inner">
+        {children}
+      </div>
     </header>
   );
 }

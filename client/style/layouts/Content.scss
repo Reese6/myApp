@@ -1,0 +1,12 @@
+#root {
+  height: 100%;
+}
+.inner-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1;
+  background-color: $back-color-gray;
+}

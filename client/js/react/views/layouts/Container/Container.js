@@ -1,10 +1,11 @@
 import React from 'react';
 import * as TYPES from 'prop-types';
 
-import { Content, Header } from '../';
+import Header from '../Header';
+import Content from '../Content';
 import { Wrapper } from './components';
 
-export default function App({ children }) {
+export default function Container({ children }) {
   return (
     <Wrapper>
       <Header />
@@ -15,6 +16,6 @@ export default function App({ children }) {
   );
 }
 
-App.propTypes =  {
+Container.propTypes =  {
   children: TYPES.node.isRequired,
 };
