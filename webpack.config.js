@@ -13,8 +13,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './client/js/react'),
-      '~': path.resolve(__dirname, './client/js/react'),
+      '~r': path.resolve(__dirname, './client/js/react'),
+      '~': path.resolve(__dirname, './client/js'),
+      '~v': path.resolve(__dirname, './client/js/react/views'),
     },
   },
   optimization: {
