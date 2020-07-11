@@ -1,0 +1,36 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 0.7rem;
+    font-weight: 300;
+    padding: 0.3rem;
+  }
+
+  input {
+    font-size: 0.8rem;
+    font-weight: 300;
+    width: 100%;
+    padding: 0.59rem;
+
+    border-radius: 3px;
+    border: 1px solid $input-border;
+    background-color: $input-bg;
+
+    outline: none;
+
+    transition: background-color 0.2s linear;
+  }
+
+  &:focus-within {
+    input {
+      background-color: $input-bg-hover;
+    }
+  }
+  &:hover {
+    input {
+      background-color: $input-bg-hover;
+    }
+  }
+}
