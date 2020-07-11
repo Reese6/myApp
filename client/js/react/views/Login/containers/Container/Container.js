@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+
+import { Wrapper, InputGroup } from '~g/';
 
 export default function Container() {
   return (
-    <div>
+    <Wrapper>
       
-    </div>
+    </Wrapper>
   );
 }

@@ -16,6 +16,7 @@ module.exports = {
       '~r': path.resolve(__dirname, './client/js/react'),
       '~': path.resolve(__dirname, './client/js'),
       '~v': path.resolve(__dirname, './client/js/react/views'),
+      '~g': path.resolve(__dirname, './client/js/react/globalComponents'),
     },
   },
   optimization: {
