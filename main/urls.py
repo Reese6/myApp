@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.index),
     path('desks', views.index),
     path('settings', views.index),
+    path('login', views.index),
 ]

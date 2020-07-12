@@ -1,0 +1,47 @@
+.login {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 100px;
+
+  &__wrapper {
+    max-width: 350px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+
+  &__controllers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+
+    &-slash {
+      font-size: 1.4rem;
+      font-weight: 100;
+    }
+
+    &-btn {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: $font-color-gray;
+      padding: 5px 3px 3px;
+
+      -webkit-tap-highlight-color: transparent;
+
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.05s linear;
+
+      &.active {
+        color: $font-color-black;
+        font-size: 1rem;
+        padding: 10px;
+      }
+    }
+  }
+}

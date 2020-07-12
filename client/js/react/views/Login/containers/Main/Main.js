@@ -2,10 +2,13 @@ import React from 'react';
 
 import { Root } from '~g';
 import Container from '../Container';
+import configureStore from '../../configureStore';
 
-export default function Main() {
+export default () => {
+  const store = configureStore();
+
   return (
-    <Root>
+    <Root store={store}>
       <Container />
     </Root>
   );

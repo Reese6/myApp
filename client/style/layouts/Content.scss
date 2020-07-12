@@ -9,13 +9,5 @@
 .content {
   flex: 1;
   background-color: $back-color-gray;
-
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    height: 100%;
-    padding: 5px;
-  }
+  padding: 5px;
 }
