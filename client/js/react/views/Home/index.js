@@ -4,17 +4,18 @@ import { InputGroup } from '~r/globalComponents';
 
 export default function index() {
   const onChange = () => {
-    console.log('1')
-  }
+    console.log('1');
+  };
   const onFocus = () => {
-    console.log('2')
-  }
+    console.log('2');
+  };
   const onBlur = () => {
-    console.log('3')
-  }
+    console.log('3');
+  };
 
   return (
     <div>
+      <p>HEEEEELLOOOO</p>
       <InputGroup
         label={'Проверка'}
         name={'Проверка'}
@@ -23,7 +24,7 @@ export default function index() {
         hasError
         isRequired
         disabled
-        classNames={'Проверка'}
+        classNames="Проверка"
         onChange={onChange}
         onFocus={onFocus}
         onBlur={onBlur}

@@ -9,7 +9,7 @@
     "dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "precommit": "lint-staged",
-    "eslint": "node_modules/.bin/eslint src/"
+    "eslint": "node_modules/.bin/eslint client/"
   },
   "lint-staged": {
     "*.{js, jsx}": [
