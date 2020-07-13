@@ -7,7 +7,16 @@
     "watch": "webpack --mode development --watch",
     "build": "webpack --config webpack.build.conf.js",
     "dev": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "lint-staged",
+    "eslint": "node_modules/.bin/eslint src/"
+  },
+  "lint-staged": {
+    "*.{js, jsx}": [
+      "node_modules/.bin/eslint --max-warnings=0",
+      "prettier --write",
+      "git add"
+    ]
   },
   "browserslist": [
     "> 1%",
@@ -25,8 +34,13 @@
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.0.3",
     "css-loader": "^3.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
     "mini-css-extract-plugin": "^0.9.0",
     "postcss-loader": "^3.0.0",
+    "prettier": "^2.0.5",
     "react-dom": "^16.13.1",
     "sass": "^1.26.9",
     "sass-loader": "^9.0.1",
