@@ -9,13 +9,11 @@ export default function Container({ children }) {
   return (
     <Wrapper>
       <Header />
-      <Content>
-        {children}
-      </Content>
+      <Content>{children}</Content>
     </Wrapper>
   );
 }
 
-Container.propTypes =  {
+Container.propTypes = {
   children: TYPES.node.isRequired,
 };

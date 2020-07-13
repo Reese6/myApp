@@ -5,32 +5,12 @@ import { connect } from 'react-redux';
 import { InputGroup } from '~g';
 import { onFormChange } from '../../actions/actionCreators';
 
-function Form({
-  name,
-  password,
-  rePassword,
-  onChange,
-}) {
+function Form({ name, password, rePassword, onChange }) {
   return (
     <form>
-      <InputGroup
-        label="Имя"
-        value={name}
-        name="name"
-        onChange={onChange}
-      />
-      <InputGroup
-        label="Имя"
-        value={password}
-        name="password"
-        onChange={onChange}
-      />
-      <InputGroup
-        label="Имя"
-        value={rePassword}
-        name="rePassword"
-        onChange={onChange}
-      />
+      <InputGroup label="Имя" value={name} name="name" onChange={onChange} />
+      <InputGroup label="Имя" value={password} name="password" onChange={onChange} />
+      <InputGroup label="Имя" value={rePassword} name="rePassword" onChange={onChange} />
     </form>
   );
 }
@@ -53,4 +33,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);
-

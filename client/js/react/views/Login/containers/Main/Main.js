@@ -4,7 +4,7 @@ import { Root } from '~g';
 import Container from '../Container';
 import configureStore from '../../configureStore';
 
-export default () => {
+export default function Main() {
   const store = configureStore();
 
   return (

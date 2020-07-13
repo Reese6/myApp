@@ -1,9 +1,9 @@
-import { ACTION_TYPES } from "../constants";
+import { ACTION_TYPES } from '../constants';
 
 export const onControllerChange = isSignUp => ({
   type: ACTION_TYPES.ON_CONTROLLER_CHANGE,
   payload: {
-    isSignUp
+    isSignUp,
   },
 });
 

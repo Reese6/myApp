@@ -4,10 +4,7 @@ import { connect } from 'react-redux';
 
 import { onControllerChange } from '../../actions/actionCreators';
 
-function Controllers({
-  isSignUp,
-  onClick,
-}) {
+function Controllers({ isSignUp, onClick }) {
   return (
     <div className="login__controllers">
       <div
@@ -28,8 +25,8 @@ function Controllers({
 }
 
 Controllers.propTypes = {
- isSignUp: TYPES.bool.isRequired,
- onClick: TYPES.func.isRequired,
+  isSignUp: TYPES.bool.isRequired,
+  onClick: TYPES.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -41,4 +38,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Controllers);
-

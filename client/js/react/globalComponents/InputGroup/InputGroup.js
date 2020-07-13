@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import * as TYPES from 'prop-types';
 import { v4 } from 'uuid';
 

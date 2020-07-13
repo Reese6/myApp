@@ -1,14 +1,8 @@
 import React from 'react';
 import * as TYPES from 'prop-types';
 
-function Content({
-  children
-}) {
-  return (
-    <div className="content">
-      {children}
-    </div>
-  );
+function Content({ children }) {
+  return <div className="content">{children}</div>;
 }
 
 Content.propTypes = {
