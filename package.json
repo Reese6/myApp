@@ -11,9 +11,13 @@
     "precommit": "lint-staged",
     "eslint": "node_modules/.bin/eslint client/"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.{js, jsx}": [
-      "node_modules/.bin/eslint --max-warnings=0",
       "prettier --write",
       "git add"
     ]
