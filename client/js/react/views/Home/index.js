@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { InputGroup } from '~r/globalComponents';
+import { InputGroup } from '~/globalComponents';
 
 export default function index() {
   const onChange = () => {

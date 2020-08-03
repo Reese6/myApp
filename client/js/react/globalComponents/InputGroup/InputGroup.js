@@ -1,6 +1,7 @@
 import React from 'react';
 import * as TYPES from 'prop-types';
-import { v4 } from 'uuid';
+
+import { uuid } from '~/helpers';
 
 function InputGroup({
   label,
@@ -23,16 +24,18 @@ function InputGroup({
     classNames,
   ].join(' ');
 
+  const idInput = id || `input-group-${uuid()}`;
+
   return (
     <div className={className}>
       {label.length > 0 && (
-        <label htmlFor={id}>
+        <label htmlFor={idInput}>
           <span>{label}</span>
           {isRequired && <span className="input-group__star-reqired"> *</span>}
         </label>
       )}
       <input
-        id={id}
+        id={idInput}
         name={name}
         value={value}
         onChange={onChange}
@@ -62,7 +65,7 @@ InputGroup.propTypes = {
 InputGroup.defaultProps = {
   label: '',
   name: '',
-  id: `input-group-${v4()}`,
+  id: '',
   hasError: false,
   isRequired: false,
   disabled: false,

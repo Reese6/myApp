@@ -1,11 +1,17 @@
 import React from 'react';
+import { NavLink, useRouteMatch } from 'react-router-dom';
 
 function Controllers() {
+  const { url } = useRouteMatch();
   return (
     <div className="login__controllers">
-      <div className={`login__controllers-btn ${'active'}`}>Авторизация</div>
+      <NavLink to={`${url}/login`} activeClassName="active">
+        Авторизация
+      </NavLink>
       <div className="login__controllers-slash">/</div>
-      <div className={`login__controllers-btn ${'active'}`}>Регистрация</div>
+      <NavLink to={`${url}/registration`} activeClassName="active">
+        Регистрация
+      </NavLink>
     </div>
   );
 }

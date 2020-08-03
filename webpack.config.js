@@ -13,8 +13,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '~r': path.resolve(__dirname, './client/js/react'),
-      '~': path.resolve(__dirname, './client/js'),
+      '~': path.resolve(__dirname, './client/js/react'),
       '~v': path.resolve(__dirname, './client/js/react/views'),
       '~g': path.resolve(__dirname, './client/js/react/globalComponents'),
     },
@@ -40,9 +39,7 @@ module.exports = {
       filename: '[name].css',
     }),
     new CopyWebpackPlugin({
-      patterns: [
-        { from: 'client/assets', to: 'assets' }
-      ],
+      patterns: [{ from: 'client/assets', to: 'assets' }],
     }),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
   ],
@@ -60,7 +57,7 @@ module.exports = {
           'css-loader',
           {
             loader: 'postcss-loader',
-            options: { config: { path: './postcss.config.js', }, },
+            options: { config: { path: './postcss.config.js' } },
           },
           {
             loader: 'sass-loader',
