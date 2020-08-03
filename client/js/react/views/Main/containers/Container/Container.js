@@ -5,7 +5,7 @@ import Base from '~v/layouts';
 import Desk from '~v/Desk';
 import Settings from '~v/Settings';
 import Home from '~v/Home';
-import Login from '~v/Login';
+import Account from '~v/Account';
 
 export default function Container() {
   return (
@@ -14,7 +14,7 @@ export default function Container() {
         <Route exact path="/" component={Home} />
         <Route exact path="/desks" component={Desk} />
         <Route exact path="/settings" component={Settings} />
-        <Route exact path="/login" component={Login} />
+        <Route path="/account" component={Account} />
       </Switch>
     </Base>
   );

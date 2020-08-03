@@ -1,7 +1,7 @@
 import React from 'react';
 import * as TYPES from 'prop-types';
 
-function Box({ children }) {
+function Wrapper({ children }) {
   return (
     <section className="login">
       <div className="login__wrapper">{children}</div>
@@ -9,8 +9,8 @@ function Box({ children }) {
   );
 }
 
-Box.propTypes = {
+Wrapper.propTypes = {
   children: TYPES.node.isRequired,
 };
 
-export default Box;
+export default Wrapper;

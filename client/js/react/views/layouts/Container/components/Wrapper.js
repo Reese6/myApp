@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import * as TYPES from 'prop-types';
 
 function Wrapper({ children }) {
-  return <section className="inner-content">{children}</section>;
+  return <Fragment>{children}</Fragment>;
 }
 
 Wrapper.propTypes = {

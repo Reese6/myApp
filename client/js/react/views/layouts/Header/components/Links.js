@@ -7,7 +7,7 @@ export default function Links() {
   return (
     <nav className="header__nav">
       {urls.map(({ url, name }, i) => (
-        <Link to={url} key={i} classNames="header__nav-link">
+        <Link to={url} key={i} class="header__nav-link">
           {name}
         </Link>
       ))}

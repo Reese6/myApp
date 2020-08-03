@@ -4,9 +4,9 @@ import { Wrapper, Links, Logo, Lk } from './components';
 export default function Header() {
   return (
     <Wrapper>
-      <Lk />
-      <Links />
       <Logo />
+      <Links />
+      <Lk />
     </Wrapper>
   );
 }
