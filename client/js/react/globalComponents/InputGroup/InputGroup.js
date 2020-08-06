@@ -8,7 +8,9 @@ function InputGroup({
   name,
   id,
   value,
+  type,
   hasError,
+  hidden,
   isRequired,
   disabled,
   classNames,
@@ -21,8 +23,11 @@ function InputGroup({
     'input-group',
     hasError ? 'error' : '',
     disabled ? 'disabled' : '',
+    hidden ? 'hidden' : '',
     classNames,
-  ].join(' ');
+  ]
+    .filter(e => e)
+    .join(' ');
 
   const idInput = id || `input-group-${uuid()}`;
 
@@ -37,6 +42,8 @@ function InputGroup({
       <input
         id={idInput}
         name={name}
+        type={type}
+        hidden={hidden}
         value={value}
         onChange={onChange}
         onFocus={onFocus}
@@ -53,11 +60,13 @@ InputGroup.propTypes = {
   id: TYPES.string,
   label: TYPES.string,
   value: TYPES.string.isRequired,
+  type: TYPES.string,
   hasError: TYPES.bool,
+  hidden: TYPES.bool,
   isRequired: TYPES.bool,
   disabled: TYPES.bool,
   classNames: TYPES.string,
-  onChange: TYPES.func.isRequired,
+  onChange: TYPES.func,
   onFocus: TYPES.func,
   onBlur: TYPES.func,
 };
@@ -66,10 +75,13 @@ InputGroup.defaultProps = {
   label: '',
   name: '',
   id: '',
+  type: 'text',
   hasError: false,
+  hidden: false,
   isRequired: false,
   disabled: false,
   classNames: '',
+  onChange: () => {},
   onFocus: () => {},
   onBlur: () => {},
 };

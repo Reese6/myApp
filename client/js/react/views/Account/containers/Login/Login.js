@@ -1,6 +1,6 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 
-import { InputGroup } from '~g';
+import { InputGroup, Form } from '~/globalComponents';
 
 export default function Login() {
   const [state, setState] = useState({
@@ -9,7 +9,7 @@ export default function Login() {
   });
 
   return (
-    <Fragment>
+    <Form method="post" action="/accounts/login">
       <InputGroup
         label="Имя"
         value={state.name}
@@ -22,6 +22,6 @@ export default function Login() {
         name="password"
         onChange={e => setState({ ...state, [e.target.name]: e.target.value })}
       />
-    </Fragment>
+    </Form>
   );
 }

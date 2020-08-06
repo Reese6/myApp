@@ -1,15 +1,16 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 
-import { InputGroup } from '~g';
+import { InputGroup, Form } from '~/globalComponents';
 
 export default function Registration() {
   const [state, setState] = useState({
     name: '',
     password: '',
+    repassword: '',
   });
 
   return (
-    <Fragment>
+    <Form method="post" action="/accounts/registration">
       <InputGroup
         label="Имя"
         value={state.name}
@@ -20,8 +21,16 @@ export default function Registration() {
         label="Пароль"
         value={state.password}
         name="password"
+        type="password"
         onChange={e => setState({ ...state, [e.target.name]: e.target.value })}
       />
-    </Fragment>
+      <InputGroup
+        label="Повторите пароль"
+        value={state.repassword}
+        name="repassword"
+        type="password"
+        onChange={e => setState({ ...state, [e.target.name]: e.target.value })}
+      />
+    </Form>
   );
 }

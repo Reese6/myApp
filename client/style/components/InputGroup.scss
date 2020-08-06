@@ -3,6 +3,10 @@
   flex-direction: column;
   margin-bottom: 0.7rem;
 
+  &.hidden {
+    display: none !important;
+  }
+
   label {
     font-size: 0.7rem;
     font-weight: 300;

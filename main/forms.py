@@ -1,7 +1,6 @@
-# from django.contrib.auth.forms import UserCreationForm
-# from django import forms
+from django import forms
 
-# class UserRegister(UserCreationForm):
-#   email = forms.EmailField(required = True)
 
-#   field_order = ['username', 'email', 'password', 'repassword']
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)

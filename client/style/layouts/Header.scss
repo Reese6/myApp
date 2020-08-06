@@ -33,31 +33,34 @@
     font-weight: 600;
     font-style: italic;
   }
-  &__nav-link {
-    color: $font-color-black;
-    text-decoration: none;
-    font-weight: 400;
-    -webkit-tap-highlight-color: transparent;
+  &__nav {
 
-    &:not(:last-child) {
-      margin-right: 0.5rem;
-    }
+    a {
+      color: $font-color-black;
+      text-decoration: none;
+      font-weight: 400;
+      -webkit-tap-highlight-color: transparent;
 
-    &::before {
-      content: '';
-      height: 2px;
-      width: 0;
-      background-color: $font-color-gray;
-      position: absolute;
-      bottom: -2px;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: width 0.2s linear;
-    }
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+      }
 
-    &:hover {
       &::before {
-        width: 100%;
+        content: '';
+        height: 2px;
+        width: 0;
+        background-color: $font-color-gray;
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: width 0.2s linear;
+      }
+
+      &:hover {
+        &::before {
+          width: 100%;
+        }
       }
     }
   }
