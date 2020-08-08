@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Base from '~v/layouts';
-import Desk from '~v/Desk';
-import Settings from '~v/Settings';
-import Home from '~v/Home';
-import Account from '~v/Account';
+import Base from '~/views/layouts';
+import Desk from '~/views/Desk';
+import Settings from '~/views/Settings';
+import Home from '~/views/Home';
+import Account from '~/views/Account';
 
 export default function Container() {
   return (

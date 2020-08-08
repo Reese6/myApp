@@ -1,6 +1,28 @@
 {
   "presets": [
-    "@babel/preset-env",
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3,
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "IE >= 11"
+          ],
+          "esmodules": true
+        }
+      }
+    ],
     "@babel/preset-react"
+  ],
+  "plugins": [
+    ["babel-plugin-root-import", {
+      "rootPathSuffix": "client/js/react"
+    }],
+    // "@babel/plugin-transform-classes",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-syntax-dynamic-import"
   ]
 }

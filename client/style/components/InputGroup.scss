@@ -1,20 +1,20 @@
 .input-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
 
   &.hidden {
     display: none !important;
   }
 
   label {
-    font-size: 0.7rem;
+    font-size: 0.83rem;
     font-weight: 300;
     padding: 0.3rem;
   }
 
   input {
-    font-size: 0.8rem;
+    font-size: 0.92rem;
     font-weight: 300;
     width: 100%;
     padding: 0.59rem;

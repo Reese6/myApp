@@ -4,17 +4,17 @@ import { InputGroup, Form } from '~/globalComponents';
 
 export default function Registration() {
   const [state, setState] = useState({
-    name: '',
+    username: '',
     password: '',
     repassword: '',
   });
 
   return (
-    <Form method="post" action="/accounts/registration">
+    <Form method="post" action="/accounts/signup">
       <InputGroup
         label="Имя"
-        value={state.name}
-        name="name"
+        value={state.username}
+        name="username"
         onChange={e => setState({ ...state, [e.target.name]: e.target.value })}
       />
       <InputGroup
