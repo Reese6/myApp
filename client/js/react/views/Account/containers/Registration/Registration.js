@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from 'react';
 
-import { InputGroup, Form, Loading } from '~/globalComponents';
+import { InputGroup, Form, Loading, Notification } from '~/globalComponents';
 
 export default function Registration() {
   const [s, setState] = useState({
@@ -21,6 +21,7 @@ export default function Registration() {
   const [isLoading, setLoading] = useState(false);
 
   const onSubmit = e => {
+    Notification('Вы успешно зарегистрировались!');
     e.preventDefault();
     setMessage('');
 
@@ -69,7 +70,8 @@ export default function Registration() {
       const j = await response.json();
       setLoading(false);
       if (j.status) {
-        window.location = '/account/login';
+        // window.location = '/account/login';
+        Notification('Вы успешно зарегистрировались!');
       } else {
         setMessage(j.error);
       }
