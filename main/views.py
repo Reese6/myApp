@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.core.serializers import serialize
+from django.core.exceptions import ObjectDoesNotExist
 
 
 def index(request):
@@ -27,14 +30,21 @@ def user_login(request):
 
 
 def user_registration(request):
+    args = {}
+    args['form'] = UserCreationForm()
     if request.method == 'POST':
-        new_form = UserCreationForm(request.POST)
-
-        if new_form.is_valid():
-            new_form.save()
-            newuser = authenticate(
-                username=new_form.cleaned_data['username'], password=new_form.cleaned_data['password'])
-            login(request, newuser)
-            return JsonResponse({'user_registration': True})
-        else:
-            return JsonResponse({'user_registration': False})
+        try:
+            u = User.objects.get(username=request.POST.get('username', ''))
+            return JsonResponse({'status': False, 'error': 'Пользоватетель с таким именем уже существет!'})
+        except ObjectDoesNotExist:
+            new_form = UserCreationForm(request.POST)
+            if new_form.is_valid():
+                new_form.save()
+                # newuser = authenticate(
+                #     username=new_form.cleaned_data['username'], password=new_form.cleaned_data['password1'])
+                # login(request, newuser)
+                return JsonResponse({'status': True})
+            else:
+                return JsonResponse({'status': False, 'error': 'Пароль слишком короткий или слабый'})
+    else:
+        return render(request, 'main/register.html', args)

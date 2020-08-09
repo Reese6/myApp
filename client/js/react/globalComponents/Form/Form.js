@@ -16,11 +16,12 @@ function Form({ children, method, action, onSubmit }) {
 Form.propTypes = {
   children: TYPES.node.isRequired,
   method: TYPES.string,
-  action: TYPES.string.isRequired,
+  action: TYPES.string,
   onSubmit: TYPES.func,
 };
 
 Form.defaultProps = {
+  action: '',
   method: 'post',
   onSubmit: () => {},
 };
