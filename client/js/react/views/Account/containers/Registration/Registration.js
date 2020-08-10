@@ -43,14 +43,15 @@ export default function Registration() {
     if (errooFields.length === 0) {
       fetchingForm();
     } else {
+      const obj = {};
       errooFields.forEach(k => {
-        setState({
+        obj[k] = {
           ...s,
           [k]: {
             ...s[k],
             error: true,
           },
-        });
+        };
       });
     }
 
@@ -91,15 +92,24 @@ export default function Registration() {
     });
   };
 
+  console.log(s);
+
   return (
     <Fragment>
       {isLoading && <Loading withBackground />}
       <Form onSubmit={onSubmit}>
         {message && <p className="text-error text-center">{message}</p>}
-        <InputGroup label="Имя" value={s.username.v} name="username" onChange={handleChange} />
+        <InputGroup
+          label="Имя"
+          value={s.username.v}
+          hasError={s.username.error}
+          name="username"
+          onChange={handleChange}
+        />
         <InputGroup
           label="Пароль"
           value={s.password1.v}
+          hasError={s.password1.error}
           name="password1"
           type="password"
           onChange={handleChange}
@@ -107,11 +117,14 @@ export default function Registration() {
         <InputGroup
           label="Повторите пароль"
           value={s.password2.v}
+          hasError={s.password2.error}
           name="password2"
           type="password"
           onChange={handleChange}
         />
-        <button type="submit">Signup</button>
+        <button type="submit" className="btn btn-primary">
+          Signup
+        </button>
       </Form>
     </Fragment>
   );

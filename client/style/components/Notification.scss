@@ -1,19 +1,41 @@
-.notification {
+.notification-container {
   position: fixed;
   bottom: 10px;
-  // left: 50%;
-  // transform: translateX(-50%);
   right: 10px;
   max-width: 380px;
-  // width: 100%;
-  padding: 15px 25px 15px 15px;
+  width: 100%;
+  counter-reset: list;
+}
+
+.notification {
+  counter-increment: list;
   display: flex;
   align-items: center;
-
+  padding: 15px 25px 15px 15px;
   background-color: #fff;
   border-radius: 3px;
-  border: 1px solid #acacac;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid $succes-color;
+  box-shadow: 0 0 3px rgba(40, 167, 69, 0.2);
+
+  transition: opacity .2s ease;
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+  }
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: $succes-color;
+  }
+
 
   &__icon-close {
     position: absolute;

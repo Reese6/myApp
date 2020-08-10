@@ -3,13 +3,11 @@ import { render } from 'react-dom';
 import Notification from './Notification';
 
 export default text => {
-  console.log('object');
   if (text) {
     const root = document.createElement('div');
     root.classList.add('notification');
-    console.log('object2');
 
-    document.body.appendChild(root);
+    document.getElementById('notification-root').appendChild(root);
 
     const removeNotification = () => {
       root.remove();
@@ -18,5 +16,9 @@ export default text => {
     // setTimeout(removeNotification, 15000);
 
     render(<Notification remove={removeNotification} text={text} />, root);
+
+    setTimeout(() => {
+      root.classList.add('show');
+    }, 50);
   }
 };

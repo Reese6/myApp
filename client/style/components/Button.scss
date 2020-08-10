@@ -1,0 +1,31 @@
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .3rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: all .15s ease-in-out;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: $succes-color;
+  border-color: $succes-color;
+
+  &:hover {
+    background-color: $succes-color-hover;
+    border-color: $succes-color-hover;
+  }
+
+  &:focus {
+    background-color: $succes-color-focus;
+    border-color: $succes-color-focus;
+    outline: none;
+  }
+}

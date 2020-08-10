@@ -8,7 +8,7 @@ import { IconWrapper } from '~/globalComponents';
 function Notification({ text, remove }) {
   return (
     <Fragment>
-      <IconWrapper classNames="notification__icon-info">
+      <IconWrapper classNames="notification__icon-info" color="#28a745">
         <FaCheckCircle />
       </IconWrapper>
       <div className="notification__text">{text}</div>
