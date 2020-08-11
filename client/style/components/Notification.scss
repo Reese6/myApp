@@ -1,13 +1,16 @@
 .notification-container {
   position: fixed;
-  bottom: 10px;
+  top: $header-height + 0.6666rem;
   right: 10px;
+  bottom: 0;
   max-width: 380px;
   width: 100%;
   counter-reset: list;
 }
 
 .notification {
+  position: sticky;
+  top: 0;
   counter-increment: list;
   display: flex;
   align-items: center;

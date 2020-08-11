@@ -1,5 +1,8 @@
 .header {
-  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  height: $header-height;
   background-color: #fff;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
 
@@ -8,6 +11,7 @@
   &__inner {
     display: flex;
     align-items: center;
+    flex: 1;
     justify-content: space-between;
   }
   &__user {
