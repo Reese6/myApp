@@ -1,0 +1,3 @@
+export default {
+  RECEIVED_USER_SUCCESS: 'RECEIVED_USER_SUCCESS',
+};

@@ -48,3 +48,13 @@ def user_registration(request):
                 return JsonResponse({'status': False, 'error': 'Пароль слишком короткий или слабый'})
     else:
         return render(request, 'main/register.html', args)
+
+
+def get_user(request):
+    if request.method == 'GET':
+        print('sdfsdfsdffffffffffffffffffffffffffffffffffffffffffffff')
+        if request.user.is_authenticated:
+            # qs_json = serialize('json', request.user)
+            return JsonResponse({'user': request.user.name, 'status': True})
+        else:
+            return JsonResponse({'status': False})
