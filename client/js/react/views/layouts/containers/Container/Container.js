@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import * as TYPES from 'prop-types';
 
 import Header from '../Header';
 import Content from '../Content';
-import { Wrapper } from './components';
 
 export default function Container({ children }) {
   return (
-    <Wrapper>
+    <Fragment>
       <Header />
-      <Content>{children}</Content>
-    </Wrapper>
+      <div className="content">
+        <Content>{children}</Content>
+        <div id="notification-root" className="notification-container" />
+      </div>
+    </Fragment>
   );
 }
 

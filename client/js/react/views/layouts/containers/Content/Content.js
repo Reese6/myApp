@@ -2,12 +2,7 @@ import React from 'react';
 import * as TYPES from 'prop-types';
 
 function Content({ children }) {
-  return (
-    <div className="content">
-      {children}
-      <div id="notification-root" className="notification-container" />
-    </div>
-  );
+  return <div className="content__wrapper">{children}</div>;
 }
 
 Content.propTypes = {
