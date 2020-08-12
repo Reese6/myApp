@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.core.serializers import serialize
+from django.forms.models import model_to_dict
 from django.core.exceptions import ObjectDoesNotExist
 
 
@@ -52,9 +52,8 @@ def user_registration(request):
 
 def get_user(request):
     if request.method == 'GET':
-        print('sdfsdfsdffffffffffffffffffffffffffffffffffffffffffffff')
         if request.user.is_authenticated:
             # qs_json = serialize('json', request.user)
-            return JsonResponse({'user': request.user.name, 'status': True})
+            return JsonResponse({'user': model_to_dict(request.user), 'status': True}, safe=False)
         else:
             return JsonResponse({'status': False})
