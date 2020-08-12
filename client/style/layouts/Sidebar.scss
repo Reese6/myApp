@@ -1,0 +1,47 @@
+.sidebar {
+  width: $SB-min-w;
+  height: 100%;
+  grid-area: sidebar;
+
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: $SB-min-w;
+    background-color: $back-SB-color-gray;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    &:hover {
+      width: $SB-max-w;
+    }
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    height: $SB-min-w;
+    width: $SB-max-w;
+
+    cursor: pointer;
+
+    div {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      &:first-child {
+        justify-content: center;
+        width: $SB-min-w;
+      }
+    }
+  }
+}

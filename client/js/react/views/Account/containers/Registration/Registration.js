@@ -21,8 +21,8 @@ export default function Registration() {
   const [isLoading, setLoading] = useState(false);
 
   const onSubmit = e => {
-    Notification('Вы успешно зарегистрировались!');
     e.preventDefault();
+    Notification('Вы успешно зарегистрировались!');
     setMessage('');
 
     const errooFields = [];

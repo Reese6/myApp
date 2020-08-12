@@ -1,1 +1,1 @@
-https://react-icons.github.io/
+https://react-icons.github.io/react-icons/

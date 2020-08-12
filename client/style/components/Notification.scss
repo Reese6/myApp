@@ -1,15 +1,12 @@
 .notification-container {
   position: fixed;
   bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 20px;
   max-width: 25.333rem;
   width: 100%;
-  counter-reset: list;
 }
 
 .notification {
-  counter-increment: list;
   display: flex;
   align-items: center;
   padding: 1rem 1.666rem 1rem 1rem;
