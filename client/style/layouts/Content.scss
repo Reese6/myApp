@@ -3,12 +3,12 @@
   display: grid;
   grid-template-areas: 'header header' 'sidebar content';
   grid-template-rows: auto 1fr;
-  grid-template-columns: $SB-min-w 1fr;
+  grid-template-columns: auto 1fr;
 }
 .content {
   grid-area: content;
   background-color: $back-color-gray;
-  padding: 2rem;
+  padding: 1.5rem;
   overflow-y: scroll;
 
   &::-webkit-scrollbar-thumb {

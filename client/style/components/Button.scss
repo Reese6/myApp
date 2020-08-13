@@ -13,19 +13,40 @@
   transition: all .15s ease-in-out;
 }
 
+.btn + .btn {
+  margin-left: 0.3333rem;
+}
+
 .btn-primary {
   color: #fff;
-  background-color: $succes-color;
-  border-color: $succes-color;
+  background-color: $primary-color;
+  border-color: $primary-color;
 
   &:hover {
-    background-color: $succes-color-hover;
-    border-color: $succes-color-hover;
+    background-color: $primary-color-hover;
+    border-color: $primary-color-hover;
   }
 
   &:focus {
-    background-color: $succes-color-focus;
-    border-color: $succes-color-focus;
+    background-color: $primary-color-focus;
+    border-color: $primary-color-focus;
+    outline: none;
+  }
+}
+
+.btn-default {
+  color: $font-color-black;
+  background-color: $default-color;
+  border-color: $default-color;
+
+  &:hover {
+    background-color: $default-color-hover;
+    border-color: $default-color-hover;
+  }
+
+  &:focus {
+    background-color: $default-color-focus;
+    border-color: $default-color-focus;
     outline: none;
   }
 }

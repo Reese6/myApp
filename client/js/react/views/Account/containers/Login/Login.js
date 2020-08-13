@@ -51,7 +51,9 @@ export default function Login() {
         type="password"
         onChange={e => setState({ ...s, [e.target.name]: e.target.value })}
       />
-      <button type="submit">Log-in</button>
+      <button type="submit" className="btn btn-primary">
+        Log-in
+      </button>
     </Form>
   );
 }

@@ -9,13 +9,12 @@
 .notification {
   display: flex;
   align-items: center;
-  padding: 1rem 1.666rem 1rem 1rem;
+  padding: 0.9rem 1.666rem 0.9rem 1rem;
   margin-top: 0.5rem;
   background-color: #fff;
   border-radius: 3px;
-  border: 1px solid $succes-color;
-  box-shadow: 0 0 3px rgba(40, 167, 69, 0.2);
-
+  border: 1px solid $border-color;
+  box-shadow: 0 0 5px rgba($color: $border-color, $alpha: 0.5);
   transition: opacity .2s ease;
   opacity: 0;
 
@@ -31,6 +30,37 @@
     bottom: 0;
     width: 3px;
     background-color: $succes-color;
+  }
+
+  &.info {
+    .notification__icon-info {
+      svg {
+        color: $info-color !important;
+      }
+    }
+    &::before {
+      background-color: $info-color;
+    }
+  }
+  &.succes {
+    .notification__icon-info {
+      svg {
+        color: $succes-color !important;
+      }
+    }
+    &::before {
+      background-color: $succes-color;
+    }
+  }
+  &.error {
+    .notification__icon-info {
+      svg {
+        color: $error-color !important;
+      }
+    }
+    &::before {
+      background-color: $error-color;
+    }
   }
 
 

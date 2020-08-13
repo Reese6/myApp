@@ -55,10 +55,10 @@ module.exports = {
         use: [
           MiniCssPlugin.loader,
           'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: { config: { path: './postcss.config.js' } },
-          },
+          // {
+          //   loader: 'postcss-loader',
+          //   options: { config: { path: './postcss.config.js' } },
+          // },
           {
             loader: 'sass-loader',
           },

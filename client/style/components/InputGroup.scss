@@ -6,6 +6,21 @@
   &.hidden {
     display: none !important;
   }
+  &.error {
+    input {
+      background-color: $input-bg-error;
+    }
+    &:focus-within {
+      input {
+        background-color: $input-bg-error-focus;
+      }
+    }
+    &:hover {
+      input {
+        background-color: $input-bg-error-hover;
+      }
+    }
+  }
 
   label {
     font-size: 0.83rem;

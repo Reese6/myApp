@@ -4,7 +4,7 @@ import { IconContext } from 'react-icons';
 
 function IconWrapper({ color, size, classNames, children, onClick, otherStyle }) {
   const styleWrapper = {
-    cursor: onClick ? 'pointer' : 'pointer',
+    cursor: onClick ? 'pointer' : 'default',
     fontSize: 0,
   };
 

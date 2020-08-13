@@ -23,37 +23,39 @@ export default function Registration() {
   const onSubmit = e => {
     e.preventDefault();
     Notification('Вы успешно зарегистрировались!');
+    Notification('Вы успешно зарегистрировались!', 'succes');
+    Notification('Вы успешно зарегистрировались!', 'error');
     setMessage('');
 
     const errooFields = [];
 
-    if (s.password1.v !== s.password2.v) {
+    if (s.password1.v !== s.password2.v || !s.password2.v) {
       errooFields.push('password2');
-      setMessage('Пароли не совпадают');
+      if (s.password2.v) setMessage('Пароли не совпадают');
     }
-    if (s.password1.v.length < 8) {
+    if (!s.password1.v || s.password1.v.length < 8) {
       errooFields.push('password1');
-      setMessage('Ваш пароль должен содержать не менее 8 символов');
+      if (s.password1.v && s.password1.v.length < 8)
+        setMessage('Ваш пароль должен содержать не менее 8 символов');
     }
     if (!s.username.v) {
       errooFields.push('username');
-      setMessage('Заполните имя');
     }
 
     if (errooFields.length === 0) {
       fetchingForm();
-    } else {
-      const obj = {};
-      errooFields.forEach(k => {
-        obj[k] = {
-          ...s,
-          [k]: {
-            ...s[k],
-            error: true,
-          },
-        };
-      });
+
+      return false;
     }
+
+    const obj = {};
+    Object.keys(s).forEach(k => {
+      obj[k] = {
+        ...s[k],
+        error: errooFields.includes(k),
+      };
+    });
+    setState(obj);
 
     return false;
   };
@@ -72,6 +74,7 @@ export default function Registration() {
       setLoading(false);
       if (j.status) {
         // window.location = '/account/login';
+        history.pushState(null, null, '/account/login');
         Notification('Вы успешно зарегистрировались!');
       } else {
         setMessage(j.error);
@@ -122,6 +125,9 @@ export default function Registration() {
           type="password"
           onChange={handleChange}
         />
+        <button type="button" className="btn btn-default">
+          Hello
+        </button>
         <button type="submit" className="btn btn-primary">
           Signup
         </button>

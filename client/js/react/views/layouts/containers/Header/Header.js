@@ -1,11 +1,16 @@
 import React from 'react';
-import { Wrapper, Links, Logo, Lk } from './components';
+import {
+  Wrapper,
+  // Links,
+  Logo,
+  Lk,
+} from './components';
 
 export default function Header() {
   return (
     <Wrapper>
       <Logo />
-      <Links />
+      {/* <Links /> */}
       <Lk />
     </Wrapper>
   );
