@@ -20,8 +20,7 @@ export default function Registration() {
   const [message, setMessage] = useState('');
   const [isLoading, setLoading] = useState(false);
 
-  const onSubmit = e => {
-    e.preventDefault();
+  const onSubmit = () => {
     Notification('Вы успешно зарегистрировались!');
     Notification('Вы успешно зарегистрировались!', 'succes');
     Notification('Вы успешно зарегистрировались!', 'error');
@@ -45,7 +44,7 @@ export default function Registration() {
     if (errooFields.length === 0) {
       fetchingForm();
 
-      return false;
+      return;
     }
 
     const obj = {};
@@ -56,8 +55,6 @@ export default function Registration() {
       };
     });
     setState(obj);
-
-    return false;
   };
 
   const fetchingForm = async () => {
@@ -100,7 +97,7 @@ export default function Registration() {
   return (
     <Fragment>
       {isLoading && <Loading withBackground />}
-      <Form onSubmit={onSubmit}>
+      <Form>
         {message && <p className="text-error text-center">{message}</p>}
         <InputGroup
           label="Имя"
@@ -125,10 +122,7 @@ export default function Registration() {
           type="password"
           onChange={handleChange}
         />
-        <button type="button" className="btn btn-default">
-          Hello
-        </button>
-        <button type="submit" className="btn btn-primary">
+        <button type="button" onClick={onSubmit} className="btn btn-primary">
           Signup
         </button>
       </Form>

@@ -8,7 +8,17 @@ from django.core.exceptions import ObjectDoesNotExist
 
 
 def index(request):
-    return render(request, 'main/index.html')
+    if not request.user.is_authenticated:
+        return redirect('/account/login')
+    else:
+        return render(request, 'main/index.html')
+
+
+def registration_login_view(request):
+    if request.user.is_authenticated:
+        return redirect('/')
+    else:
+        return render(request, 'main/index.html')
 
 
 def user_logout(request):
@@ -46,8 +56,6 @@ def user_registration(request):
                 return JsonResponse({'status': True})
             else:
                 return JsonResponse({'status': False, 'error': 'Пароль слишком короткий или слабый'})
-    else:
-        return render(request, 'main/register.html', args)
 
 
 def get_user(request):
