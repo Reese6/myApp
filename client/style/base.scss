@@ -50,3 +50,13 @@ h6 {
 p {
   margin: 0.67em 0;
 }
+
+a {
+  text-decoration: none;
+  color: $info-color;
+  transition: color 0.2s linear;
+
+  &:hover {
+    color: $error-color;
+  }
+}

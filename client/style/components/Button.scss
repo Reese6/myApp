@@ -13,7 +13,8 @@
   transition: all .15s ease-in-out;
 }
 
-.btn + .btn {
+.btn + .btn,
+.btn + a {
   margin-left: 0.3333rem;
 }
 

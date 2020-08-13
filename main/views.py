@@ -40,8 +40,6 @@ def user_login(request):
 
 
 def user_registration(request):
-    args = {}
-    args['form'] = UserCreationForm()
     if request.method == 'POST':
         try:
             u = User.objects.get(username=request.POST.get('username', ''))

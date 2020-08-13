@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import { InputGroup, Form, Loading, Notification } from '~/globalComponents';
 
@@ -21,9 +22,6 @@ export default function Registration() {
   const [isLoading, setLoading] = useState(false);
 
   const onSubmit = () => {
-    Notification('Вы успешно зарегистрировались!');
-    Notification('Вы успешно зарегистрировались!', 'succes');
-    Notification('Вы успешно зарегистрировались!', 'error');
     setMessage('');
 
     const errooFields = [];
@@ -70,8 +68,7 @@ export default function Registration() {
       const j = await response.json();
       setLoading(false);
       if (j.status) {
-        // window.location = '/account/login';
-        history.pushState(null, null, '/account/login');
+        document.getElementById('account-login-link').click();
         Notification('Вы успешно зарегистрировались!');
       } else {
         setMessage(j.error);
@@ -97,6 +94,12 @@ export default function Registration() {
   return (
     <Fragment>
       {isLoading && <Loading withBackground />}
+      <div className="account__title">
+        <NavLink to={`../account/login`}>
+          <span id="account-login-link" />
+        </NavLink>
+        <div>Регистрация</div>
+      </div>
       <Form>
         {message && <p className="text-error text-center">{message}</p>}
         <InputGroup
@@ -122,8 +125,8 @@ export default function Registration() {
           type="password"
           onChange={handleChange}
         />
-        <button type="button" onClick={onSubmit} className="btn btn-primary">
-          Signup
+        <button type="button" onClick={onSubmit} className="btn btn-primary btn-block">
+          Зарегистрироваться
         </button>
       </Form>
     </Fragment>

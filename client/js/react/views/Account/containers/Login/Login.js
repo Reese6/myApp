@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import { InputGroup, Form } from '~/globalComponents';
 
@@ -52,8 +53,9 @@ export default function Login() {
         onChange={e => setState({ ...s, [e.target.name]: e.target.value })}
       />
       <button type="submit" className="btn btn-primary">
-        Log-in
+        Войти
       </button>
+      <NavLink to={`../account/registration`}>Регистрация</NavLink>
     </Form>
   );
 }
