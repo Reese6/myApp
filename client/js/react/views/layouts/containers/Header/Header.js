@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import {
   Wrapper,
   // Links,
@@ -7,11 +9,13 @@ import {
 } from './components';
 
 export default function Header() {
+  const user = useSelector(state => state.user);
+
   return (
     <Wrapper>
       <Logo />
       {/* <Links /> */}
-      <Lk />
+      {user.username && <Lk />}
     </Wrapper>
   );
 }

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { RiLogoutBoxLine } from 'react-icons/ri';
-import { AiOutlineProfile } from 'react-icons/ai';
-import { IoMdSettings } from 'react-icons/io';
+import { GrProjects } from 'react-icons/gr';
+import { FaRegUser } from 'react-icons/fa';
 
 import { IconWrapper } from '~/globalComponents';
 
@@ -12,18 +12,18 @@ export default function Sidebar() {
   return (
     <section className="sidebar">
       <div className="sidebar__wrapper">
-        <Link to="/desks">
+        <NavLink to="/profile" activeClassName="active">
           <IconWrapper size={sizeIcon}>
-            <AiOutlineProfile />
+            <FaRegUser />
           </IconWrapper>
-          <div>Доски</div>
-        </Link>
-        <Link to="/settings">
+          <div>Профиль</div>
+        </NavLink>
+        <NavLink to="/projects" activeClassName="active">
           <IconWrapper size={sizeIcon}>
-            <IoMdSettings />
+            <GrProjects />
           </IconWrapper>
-          <div>Настройки</div>
-        </Link>
+          <div>Проекты</div>
+        </NavLink>
         <div className="flex-1" />
         <a href="/logout">
           <IconWrapper size={sizeIcon}>
