@@ -53,6 +53,9 @@ export default function Registration() {
         error: errooFields.includes(k),
       };
     });
+
+    Notification('Заполните обязательные поля!', 'error');
+
     setState(obj);
   };
 
@@ -91,12 +94,13 @@ export default function Registration() {
   };
 
   const onNameBlur = e => {
-    e.target.value = e.target.value.replace(/[\sА-Яа-яЁё;:,|№~#={}[\]!?"%$&^*()""'<>`\\/\\/]/g, '');
+    const reg = /[\sА-Яа-яЁё;:,|№~#={}[\]!?"%$&^*()""'<>`\\/\\/]/g;
+    if (reg.test(e.target.value))
+      Notification('Имя может содержать цифрры, латинские буквы, _, @, +, .и - символы');
+    e.target.value = e.target.value.replace(reg, '');
 
     handleChange(e);
   };
-
-  console.log(s);
 
   return (
     <Fragment>
