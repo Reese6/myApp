@@ -90,6 +90,12 @@ export default function Registration() {
     });
   };
 
+  const onNameBlur = e => {
+    e.target.value = e.target.value.replace(/[\sА-Яа-яЁё;:,|№~#={}[\]!?"%$&^*()""'<>`\\/\\/]/g, '');
+
+    handleChange(e);
+  };
+
   console.log(s);
 
   return (
@@ -111,6 +117,7 @@ export default function Registration() {
           hasError={s.username.error}
           name="username"
           onChange={handleChange}
+          onBlur={onNameBlur}
         />
         <InputGroup
           label="Пароль"
