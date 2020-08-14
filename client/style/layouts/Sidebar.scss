@@ -9,8 +9,8 @@
     top: 0;
     bottom: 0;
     left: 0;
-    width: $SB-min-w;
-    background-color: $back-SB-color-gray;
+    width: $SB-min-w + 0.3rem;
+    background-color: $back-color-gray;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -19,12 +19,29 @@
 
     &:hover {
       width: $SB-max-w;
+
+      &::after {
+        background-color: $SB-link-hover;
+      }
+    }
+
+    &::after {
+      content: '';
+      width: 0.3rem;
+      background-color: $back-color-gray;
+      border-right: 1px solid $border-color;
+      border-left: 1px solid $border-color;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transition: background-color 0.2s linear;
     }
 
     &::-webkit-scrollbar-thumb {
       cursor: pointer;
       border-radius: 5px;
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.15);
       transition: color 0.2s ease;
     }
     &::-webkit-scrollbar-track {
@@ -36,10 +53,6 @@
       width: 0.4rem;
       height: 0.4rem;
     }
-  }
-
-  .flex-1 {
-    flex: 1;
   }
 
   a {
@@ -65,8 +78,23 @@
       }
     }
 
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      // background-color: $succes-color;
+      transition: background-color 0.2s linear;
+    }
+
     &:hover {
       background-color: $SB-link-hover;
+
+      &::before {
+        background-color: $primary-color;
+      }
     }
   }
 }
