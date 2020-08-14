@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { InputGroup, Form } from '~/globalComponents';
@@ -37,25 +37,33 @@ export default function Login() {
   };
 
   return (
-    <Form method="post" action="/accounts/signin" onSubmit={onSubmit}>
-      {message && <p className="text-error text-center">{message}</p>}
-      <InputGroup
-        label="Имя"
-        value={s.username}
-        name="username"
-        onChange={e => setState({ ...s, [e.target.name]: e.target.value })}
-      />
-      <InputGroup
-        label="Пароль"
-        value={s.password}
-        name="password"
-        type="password"
-        onChange={e => setState({ ...s, [e.target.name]: e.target.value })}
-      />
-      <button type="submit" className="btn btn-primary">
-        Войти
-      </button>
-      <NavLink to={`../account/registration`}>Регистрация</NavLink>
-    </Form>
+    <Fragment>
+      <div className="account__title">
+        <h4>Авторизация</h4>
+      </div>
+      <Form method="post" action="/accounts/signin" onSubmit={onSubmit}>
+        {message && <p className="text-error text-center">{message}</p>}
+        <InputGroup
+          label="Имя"
+          value={s.username}
+          name="username"
+          onChange={e => setState({ ...s, [e.target.name]: e.target.value })}
+        />
+        <InputGroup
+          label="Пароль"
+          value={s.password}
+          name="password"
+          type="password"
+          onChange={e => setState({ ...s, [e.target.name]: e.target.value })}
+        />
+        <button type="submit" className="btn btn-primary btn-block">
+          Войти
+        </button>
+      </Form>
+      <div className="account__footer text-center">
+        <span>Нет аккаунта? </span>
+        <NavLink to={`../account/registration`}>Зарегистрироваться</NavLink>
+      </div>
+    </Fragment>
   );
 }

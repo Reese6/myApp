@@ -12,34 +12,47 @@
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   }
 
-  &__controllers {
+  &__title {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 40px;
-
-    &-slash {
-      font-size: 1.4rem;
-      font-weight: 100;
-    }
 
     a {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: $font-color-gray;
-      padding: 5px 3px 3px;
-      text-decoration: none;
-
-      -webkit-tap-highlight-color: transparent;
-
-      cursor: pointer;
-      user-select: none;
-
-      &.active {
-        color: $font-color-black;
-        font-size: 1rem;
-        padding: 10px;
-      }
+      margin-right: 0.5rem;
     }
   }
+
+  &__footer {
+    padding-top: 2rem;
+  }
+
+  // &__controllers {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   height: 40px;
+
+  //   &-slash {
+  //     font-size: 1.4rem;
+  //     font-weight: 100;
+  //   }
+
+  //   a {
+  //     font-size: 0.8rem;
+  //     font-weight: 500;
+  //     color: $font-color-gray;
+  //     padding: 5px 3px 3px;
+  //     text-decoration: none;
+
+  //     -webkit-tap-highlight-color: transparent;
+
+  //     cursor: pointer;
+  //     user-select: none;
+
+  //     &.active {
+  //       color: $font-color-black;
+  //       font-size: 1rem;
+  //       padding: 10px;
+  //     }
+  //   }
+  // }
 }

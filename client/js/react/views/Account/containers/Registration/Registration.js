@@ -1,7 +1,8 @@
 import React, { useState, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 
-import { InputGroup, Form, Loading, Notification } from '~/globalComponents';
+import { InputGroup, Form, Loading, Notification, IconWrapper } from '~/globalComponents';
 
 export default function Registration() {
   const [s, setState] = useState({
@@ -69,7 +70,7 @@ export default function Registration() {
       setLoading(false);
       if (j.status) {
         document.getElementById('account-login-link').click();
-        Notification('Вы успешно зарегистрировались!');
+        Notification('Вы успешно зарегистрировались!', 'succes');
       } else {
         setMessage(j.error);
       }
@@ -96,9 +97,11 @@ export default function Registration() {
       {isLoading && <Loading withBackground />}
       <div className="account__title">
         <NavLink to={`../account/login`}>
-          <span id="account-login-link" />
+          <IconWrapper id="account-login-link" onClick={() => {}}>
+            <IoMdArrowRoundBack />
+          </IconWrapper>
         </NavLink>
-        <div>Регистрация</div>
+        <h4>Регистрация</h4>
       </div>
       <Form>
         {message && <p className="text-error text-center">{message}</p>}

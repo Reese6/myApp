@@ -10,10 +10,10 @@ export default (text, type) => {
     document.getElementById('notification-root').appendChild(root);
 
     const removeNotification = () => {
-      root.remove();
+      if (root) root.remove();
     };
 
-    // setTimeout(removeNotification, 15000);
+    setTimeout(removeNotification, 15000);
 
     render(<Notification remove={removeNotification} text={text} type={type || 'info'} />, root);
 
