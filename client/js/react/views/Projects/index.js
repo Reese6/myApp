@@ -1,5 +1,15 @@
 import React from 'react';
 
-export default function index() {
-  return <div>Projects</div>;
+import { Root } from '~/globalComponents';
+import { configureStore } from '~/helpers';
+import reducer from './rudecer/';
+
+export default function Main() {
+  const store = configureStore('Projects', reducer);
+
+  return (
+    <Root store={store}>
+      <div>Projects</div>
+    </Root>
+  );
 }
