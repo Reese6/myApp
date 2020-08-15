@@ -5,3 +5,5 @@ export { default as Form } from './Form';
 export { default as Loading } from './Loading';
 export { default as IconWrapper } from './IconWrapper';
 export { default as Notification } from './Notification';
+export { default as TitlePage } from './TitlePage';
+export { default as Button } from './Button';

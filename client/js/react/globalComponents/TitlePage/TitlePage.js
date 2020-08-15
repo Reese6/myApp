@@ -1,10 +1,23 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import * as TYPES from 'prop-types';
 
-function TitlePage() {
-  return <div />;
+function TitlePage({ children, title }) {
+  return (
+    <section className="title-page">
+      {title && <div className="title-page__title">{title}</div>}
+      {children && <div className="title-page__children">{children}</div>}
+    </section>
+  );
 }
 
-TitlePage.propTypes = {};
+TitlePage.propTypes = {
+  children: TYPES.node,
+  title: TYPES.string,
+};
+
+TitlePage.defaultProps = {
+  children: '',
+  title: '',
+};
 
 export default TitlePage;
