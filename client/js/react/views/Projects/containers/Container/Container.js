@@ -1,10 +1,10 @@
 import React from 'react';
 // import * as TYPES from 'prop-types';
 
-// import { TitlePage } from '~/gloabalComponents';
+import { TitlePage } from '~/globalComponents';
 
 function Container() {
-  return <div />;
+  return <TitlePage title="Проекты" />;
 }
 
 Container.propTypes = {};
