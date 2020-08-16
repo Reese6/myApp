@@ -18,7 +18,7 @@ function Projects() {
               className="projects__item"
               style={
                 el.avatar
-                  ? { backgroundImage: `url(/${el.avatar})` }
+                  ? { backgroundImage: `url(/images/${el.avatar})` }
                   : { backgroundColor: primary_color }
               }
             >
