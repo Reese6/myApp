@@ -5,9 +5,11 @@ from django.contrib.auth.models import User
 class Project(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    admin = models.ForeignKey(User, on_delete=models.CASCADE, related_name='admin')
+    admin = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='admin')
     users = models.ManyToManyField(User, related_name='users')
     create_date = models.DateField()
+    avatar = models.ImageField(upload_to='images', default='')
 
     def __str__(self):
         return self.name

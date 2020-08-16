@@ -3,9 +3,9 @@
   &__items-wrapper {
     margin: 2.5rem 0;
     padding: 0;
-    overflow-x: auto;
-    white-space: nowrap;
-    @extend %with-scroll;
+    // overflow-x: auto;
+    // white-space: nowrap;
+    // @extend %with-scroll;
   }
 
   &__item {
@@ -17,14 +17,22 @@
     margin: 0.5rem;
     padding: 0.7rem 1rem;
     border-radius: 5px;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Moscow-City_%2836211143494%29.jpg/1280px-Moscow-City_%2836211143494%29.jpg');
+    // background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Moscow-City_%2836211143494%29.jpg/1280px-Moscow-City_%2836211143494%29.jpg');
     background-repeat: no-repeat;
+    background-color: $primary-color;
     background-position: center center;
     background-size: cover;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
     a {
-      color: $font-color-black;
+      color: #fff;
+    }
+
+    &:hover {
+
+      .projects__item-bg {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
     }
   }
 
@@ -33,24 +41,24 @@
     top: 0;
     right: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.05);
     bottom: 0;
+    transition: background-color 0.3s linear;
   }
 
   &__item-title {
     font-weight: 600;
     font-size: $h4-font-size;
-    padding: 1rem 0;
+    padding: 0.7rem 0;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
   &__item-text {
-    line-height: 1.8;
+    line-height: 2;
     font-weight: 400;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     display: -webkit-box;
-    white-space: normal;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
     overflow: hidden;
