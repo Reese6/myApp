@@ -1,0 +1,19 @@
+.title-page {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+
+  &__title {
+    font-size: $h1-font-size;
+    font-weight: 600;
+  }
+
+  &__title + &__children {
+    margin-left: 1.2rem;
+  }
+
+  &__children {
+    display: flex;
+    align-items: center;
+  }
+}
