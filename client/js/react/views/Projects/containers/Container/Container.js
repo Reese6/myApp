@@ -1,16 +1,19 @@
 import React from 'react';
-// import * as TYPES from 'prop-types';
+import { useSelector } from 'react-redux';
 
-import { TitlePage, Button } from '~/globalComponents';
+import { TitlePage, Button, Loading } from '~/globalComponents';
 import Projects from '../Projects';
 
 function Container() {
+  const { isLoading, isError } = useSelector(state => state);
+
   return (
     <div className="projects">
       <TitlePage title="Проекты">
         <Button primary title="Новый проект" />
       </TitlePage>
-      <Projects />
+      {isLoading && <Loading />}
+      {!isLoading && !isError && <Projects />}
     </div>
   );
 }

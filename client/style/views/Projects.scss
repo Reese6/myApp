@@ -17,9 +17,7 @@
     margin: 0.5rem;
     padding: 0.7rem 1rem;
     border-radius: 5px;
-    // background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Moscow-City_%2836211143494%29.jpg/1280px-Moscow-City_%2836211143494%29.jpg');
     background-repeat: no-repeat;
-    background-color: $primary-color;
     background-position: center center;
     background-size: cover;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -31,7 +29,7 @@
     &:hover {
 
       .projects__item-bg {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.5);
       }
     }
   }
@@ -41,7 +39,7 @@
     top: 0;
     right: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 0, 0.3);
     bottom: 0;
     transition: background-color 0.3s linear;
   }
