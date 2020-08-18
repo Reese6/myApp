@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 import { primary_color } from '~/styleConstants';
 
@@ -23,10 +24,10 @@ function Projects() {
               }
             >
               <div className="projects__item-bg" />
-              <a href="#">
+              <NavLink to={`/projects/${el.id}`}>
                 <div className="projects__item-title">{el.name}</div>
                 <div className="projects__item-text">{el.description}</div>
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>

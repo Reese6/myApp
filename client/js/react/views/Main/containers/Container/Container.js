@@ -12,7 +12,7 @@ export default function Container() {
     <Base>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/projects" component={Projects} />
+        <Route path="/projects" component={Projects} />
         <Route exact path="/profile" component={Profile} />
         <Route path="/account" component={Account} />
       </Switch>
