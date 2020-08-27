@@ -13,8 +13,9 @@ function Container() {
       <TitlePage title="Проекты">
         <Button primary>
           <AiOutlinePlusCircle />
-          {/* <span>Проект</span> */}
+          <span>Создать проект</span>
         </Button>
+        <div className="flex-1" />
       </TitlePage>
       {isLoading && <Loading />}
       {!isLoading && !isError && <Projects />}
