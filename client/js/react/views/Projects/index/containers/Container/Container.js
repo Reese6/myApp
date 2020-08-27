@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { AiOutlinePlusCircle } from 'react-icons/ai';
 
 import { TitlePage, Button, Loading } from '~/globalComponents';
 import Projects from '../Projects';
@@ -10,7 +11,10 @@ function Container() {
   return (
     <div className="projects">
       <TitlePage title="Проекты">
-        <Button primary title="Новый проект" />
+        <Button primary>
+          <AiOutlinePlusCircle />
+          {/* <span>Проект</span> */}
+        </Button>
       </TitlePage>
       {isLoading && <Loading />}
       {!isLoading && !isError && <Projects />}

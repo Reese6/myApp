@@ -106,7 +106,7 @@ export default function Registration() {
     <Fragment>
       {isLoading && <Loading withBackground />}
       <div className="account__title">
-        <NavLink to={`../account/login`}>
+        <NavLink to={`/account/login`}>
           <IconWrapper id="account-login-link" onClick={() => {}}>
             <IoMdArrowRoundBack />
           </IconWrapper>

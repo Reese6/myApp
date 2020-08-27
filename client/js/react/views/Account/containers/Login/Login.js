@@ -15,7 +15,7 @@ export default function Login() {
     if (s.username && s.password) {
       const form = document.getElementsByTagName('form')[0];
 
-      const response = await fetch('/accounts/signin', {
+      const response = await fetch('/accounts/signin/', {
         method: 'post',
         body: new FormData(form),
       });
@@ -41,7 +41,7 @@ export default function Login() {
       <div className="account__title">
         <h4>Авторизация</h4>
       </div>
-      <Form method="post" action="/accounts/signin" onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit}>
         {message && <p className="text-error text-center">{message}</p>}
         <InputGroup
           label="Имя"
@@ -62,7 +62,7 @@ export default function Login() {
       </Form>
       <div className="account__footer text-center">
         <span>Нет аккаунта? </span>
-        <NavLink to={`../account/registration`}>Зарегистрироваться</NavLink>
+        <NavLink to={`/account/registration`}>Зарегистрироваться</NavLink>
       </div>
     </Fragment>
   );

@@ -8,9 +8,25 @@
   border: 1px solid transparent;
   padding: .3rem .75rem;
   font-size: 1rem;
-  line-height: 1.5;
-  border-radius: .25rem;
+  // line-height: 1.5;
+  border-radius: .2rem;
   transition: all .15s ease-in-out;
+
+  & > svg {
+    display: inline-block;
+    height: 1.3rem !important;
+    width: 1.3rem !important;
+    font-size: 0;
+    vertical-align: middle;
+  }
+  & svg + span {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  &--icon {
+    padding: .4rem;
+  }
 }
 
 .btn-block {

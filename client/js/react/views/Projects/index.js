@@ -1,22 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
-import { Root } from '~/globalComponents';
-import Container from './containers';
-
-import { configureStore } from '~/helpers';
-import reducer from './rudecer/';
-import { fetchingData } from './actions';
+import Index from './index/';
 
 export default function Main() {
-  const [store] = useState(configureStore('Projects', reducer));
-
-  useEffect(() => {
-    store.dispatch(fetchingData());
-  }, []);
+  const { path } = useRouteMatch();
 
   return (
-    <Root store={store}>
-      <Container />
-    </Root>
+    <Switch>
+      <Route exact path={`${path}/`} component={Index} />
+      {/* <Route exact path={`${path}/:ID`} component={Registration} /> */}
+    </Switch>
   );
 }
