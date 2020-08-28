@@ -10,7 +10,6 @@
   padding: 0 .7rem;
   min-height: 2.3rem;
   font-size: 1rem;
-  line-height: 1.2;
   border-radius: .3rem;
   transition: all .15s ease-in-out;
 
@@ -45,14 +44,19 @@
   border-color: $primary-color;
 
   &:hover {
-    background-color: $primary-color-hover;
-    border-color: $primary-color-hover;
+    background-color: darken($primary-color, 5%);
+    border-color: darken($primary-color, 5%);
   }
 
   &:focus {
-    background-color: $primary-color-focus;
-    border-color: $primary-color-focus;
+    background-color: darken($primary-color, 7%);
+    border-color: darken($primary-color, 7%);
     outline: none;
+  }
+
+  &:active {
+    background-color: darken($primary-color, 12%);
+    border-color: darken($primary-color, 12%);
   }
 }
 
@@ -63,13 +67,18 @@
   border-color: $default-color;
 
   &:hover {
-    background-color: $default-color-hover;
-    border-color: $default-color-hover;
+    background-color: darken($default-color, 5%);
+    border-color: darken($default-color, 5%);
   }
 
   &:focus {
-    background-color: $default-color-focus;
-    border-color: $default-color-focus;
+    background-color: darken($default-color, 7%);
+    border-color: darken($default-color, 7%);
     outline: none;
+  }
+
+  &:active {
+    background-color: darken($default-color, 12%);
+    border-color: darken($default-color, 12%);
   }
 }
