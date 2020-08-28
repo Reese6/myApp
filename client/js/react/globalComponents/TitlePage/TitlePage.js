@@ -1,11 +1,22 @@
 import React from 'react';
 import * as TYPES from 'prop-types';
+import { AiOutlinePlusCircle } from 'react-icons/ai';
 
-function TitlePage({ children, title }) {
+import { Button } from '~/globalComponents';
+
+function TitlePage({ children, title, link, button, titleButton }) {
   return (
     <section className="title-page">
       {title && <div className="title-page__title">{title}</div>}
-      {children && <div className="title-page__children">{children}</div>}
+      <div className="title-page__children">
+        {(link || button) && (
+          <Button primary link={link} onClick={button}>
+            <AiOutlinePlusCircle />
+            <span>{titleButton}</span>
+          </Button>
+        )}
+        {children}
+      </div>
     </section>
   );
 }
@@ -13,11 +24,17 @@ function TitlePage({ children, title }) {
 TitlePage.propTypes = {
   children: TYPES.node,
   title: TYPES.string,
+  titleButton: TYPES.string,
+  button: TYPES.func,
+  link: TYPES.string,
 };
 
 TitlePage.defaultProps = {
   children: '',
   title: '',
+  titleButton: '',
+  button: null,
+  link: '',
 };
 
 export default TitlePage;

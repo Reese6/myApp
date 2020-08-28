@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 
 export default function Lk() {
@@ -6,8 +6,13 @@ export default function Lk() {
 
   return (
     <div className="header__user">
-      <div className="header__user-img" />
-      <div className="header__user-name">{user.username}</div>
+      {user.username && (
+        <Fragment>
+          <div className="header__user-img" />
+          <div className="header__user-name">{user.username}</div>
+        </Fragment>
+      )}
+      {!user.username && <div className="header__user-name">Добро пожаловать</div>}
     </div>
   );
 }
