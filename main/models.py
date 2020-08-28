@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
+import uuid
 
 
 image_storage = FileSystemStorage(
@@ -31,37 +32,47 @@ class Project(models.Model):
         return self.name
 
 
-class Board(models.Model):
-    name = models.CharField(max_length=100)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.name
-
-
-class Column(models.Model):
-    name = models.CharField(max_length=100)
-    index = models.IntegerField()
-    board = models.ForeignKey(Board, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.name
-
-
-class Task(models.Model):
+class Tasks(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=150)
     description = models.TextField()
     users = models.ManyToManyField(User)
-    column = models.ForeignKey(Column, on_delete=models.CASCADE)
+    # column = models.ForeignKey(Column, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
 
+# class Board(models.Model):
+#     name = models.CharField(max_length=100)
+#     project = models.ForeignKey(Project, on_delete=models.CASCADE)
 
-class CommentTask(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    task = models.ForeignKey(Task, on_delete=models.CASCADE)
-    comment = models.CharField(max_length=150)
+#     def __str__(self):
+#         return self.name
 
-    def __str__(self):
-        return self.comment
+
+# class Column(models.Model):
+#     name = models.CharField(max_length=100)
+#     index = models.IntegerField()
+#     board = models.ForeignKey(Board, on_delete=models.CASCADE)
+
+#     def __str__(self):
+#         return self.name
+
+
+# class Task(models.Model):
+#     name = models.CharField(max_length=150)
+#     description = models.TextField()
+#     users = models.ManyToManyField(User)
+#     column = models.ForeignKey(Column, on_delete=models.CASCADE)
+
+#     def __str__(self):
+#         return self.name
+
+
+# class CommentTask(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     task = models.ForeignKey(Task, on_delete=models.CASCADE)
+#     comment = models.CharField(max_length=150)
+
+#     def __str__(self):
+#         return self.comment
