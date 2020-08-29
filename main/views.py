@@ -59,7 +59,6 @@ def user_registration(request):
 def get_user(request):
     if request.method == 'GET':
         if request.user.is_authenticated:
-            # qs_json = serialize('json', request.user)
             return JsonResponse({'user': model_to_dict(request.user), 'status': True}, safe=False)
         else:
             return JsonResponse({'status': False})

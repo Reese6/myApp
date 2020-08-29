@@ -1,0 +1,4 @@
+export default {
+  RECEIVED_DATA: 'RECEIVED_DATA',
+  ERROR_RECEIVED: 'ERROR_RECEIVED',
+};
