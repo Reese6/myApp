@@ -32,34 +32,16 @@ class Project(models.Model):
         return self.name
 
 
-class Tasks(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=150)
-    description = models.TextField()
-    users = models.ManyToManyField(User)
-    # column = models.ForeignKey(Column, on_delete=models.CASCADE)
+class Column(models.Model):
+    name = models.CharField(max_length=100)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
 
-# class Board(models.Model):
-#     name = models.CharField(max_length=100)
-#     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-
-#     def __str__(self):
-#         return self.name
-
-
-# class Column(models.Model):
-#     name = models.CharField(max_length=100)
-#     index = models.IntegerField()
-#     board = models.ForeignKey(Board, on_delete=models.CASCADE)
-
-#     def __str__(self):
-#         return self.name
-
 
 # class Task(models.Model):
+#     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 #     name = models.CharField(max_length=150)
 #     description = models.TextField()
 #     users = models.ManyToManyField(User)
@@ -76,3 +58,21 @@ class Tasks(models.Model):
 
 #     def __str__(self):
 #         return self.comment
+
+
+# class Board(models.Model):
+#     name = models.CharField(max_length=100)
+#     project = models.ForeignKey(Project, on_delete=models.CASCADE)
+
+#     def __str__(self):
+#         return self.name
+
+
+# class Task(models.Model):
+#     name = models.CharField(max_length=150)
+#     description = models.TextField()
+#     users = models.ManyToManyField(User)
+#     column = models.ForeignKey(Column, on_delete=models.CASCADE)
+
+#     def __str__(self):
+#         return self.name
