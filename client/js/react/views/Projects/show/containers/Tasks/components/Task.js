@@ -4,8 +4,8 @@ import * as TYPES from 'prop-types';
 function Task({ name, description }) {
   return (
     <div className="tasks__task">
-      <h4>{name}</h4>
-      <p>{description}</p>
+      <div className="tasks__task-header">{name}</div>
+      <div className="tasks__task-content">{description}</div>
     </div>
   );
 }

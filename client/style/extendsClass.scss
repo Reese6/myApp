@@ -7,7 +7,7 @@
   }
   &::-webkit-scrollbar-track {
     background: rgba($color: $primary-color, $alpha: 0.1);
-    border-radius: 0;
+    border-radius: 5px;
   }
   &::-webkit-scrollbar {
     -webkit-appearance: none;
