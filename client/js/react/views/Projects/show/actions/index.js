@@ -11,10 +11,10 @@ export const fetchingData = id => dispatch => {
     })
     .then(data => {
       if (data.status) {
-        console.log(data);
         dispatch({
           type: ACTION_TYPES.RECEIVED_DATA,
           payload: {
+            ...data,
             project: data.project[0],
           },
         });

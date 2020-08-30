@@ -12,6 +12,24 @@ const project = (state = initialState.project, { payload, type }) => {
   }
 };
 
+const columns = (state = initialState.columns, { payload, type }) => {
+  switch (type) {
+    case ACTION_TYPES.RECEIVED_DATA:
+      return payload.columns;
+    default:
+      return state;
+  }
+};
+
+const tasks = (state = initialState.tasks, { payload, type }) => {
+  switch (type) {
+    case ACTION_TYPES.RECEIVED_DATA:
+      return payload.tasks;
+    default:
+      return state;
+  }
+};
+
 const error = (state = initialState.error, { type }) => {
   switch (type) {
     case ACTION_TYPES.ERROR_RECEIVED:
@@ -23,5 +41,7 @@ const error = (state = initialState.error, { type }) => {
 
 export default combineReducers({
   project,
+  columns,
+  tasks,
   error,
 });
