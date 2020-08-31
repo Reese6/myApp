@@ -75,13 +75,20 @@
     bottom: 0;
     left: 0;
     right: 0;
+    padding-bottom: 0.8rem;
+
+    @extend %with-scroll;
+
+    &::-webkit-scrollbar {
+      height: 0.55rem;
+    }
   }
 
   &__column {
     max-width: 260px;
-    width: 100%;
+    min-width: 260px;
     max-height: 100%;
-    padding: 0 0.2rem 0 0;
+    padding: 0 0.45rem;
     margin: 0 0.4rem;
     border-radius: 6px;
 
@@ -91,7 +98,7 @@
     background-color: $SB-link-hover;
 
     &-header {
-      padding: 0.8rem 0.6rem 0.8rem 0.6rem;
+      padding: 0.8rem 0.3rem;
       font-size: $h4-font-size;
       font-weight: 700;
     }
@@ -99,8 +106,7 @@
     &-content {
       flex: 1;
       overflow-y: auto;
-      padding: 0 0.2rem;
-      margin: 0 0.1rem;
+      padding-right: 0.3rem;
 
       @extend %with-scroll;
     }

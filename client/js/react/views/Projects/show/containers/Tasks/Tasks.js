@@ -36,10 +36,6 @@ export default function Tasks() {
               tasks[c.id].map((t, j) => (
                 <Fragment key={j}>
                   <Task name={t.name} description={t.description} />
-                  <Task name={t.name} description={t.description} />
-                  <Task name={t.name} description={t.description} />
-                  <Task name={t.name} description={t.description} />
-                  <Task name={t.name} description={t.description} />
                 </Fragment>
               ))}
           </Column>
