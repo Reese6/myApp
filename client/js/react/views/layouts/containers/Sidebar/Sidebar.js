@@ -13,22 +13,28 @@ export default function Sidebar() {
     <section className="sidebar">
       <div className="sidebar__wrapper">
         <NavLink to="/profile" activeClassName="active">
-          <IconWrapper size={sizeIcon}>
-            <FaRegUser />
-          </IconWrapper>
+          <div>
+            <IconWrapper size={sizeIcon}>
+              <FaRegUser />
+            </IconWrapper>
+          </div>
           <div>Профиль</div>
         </NavLink>
         <NavLink to="/projects" activeClassName="active">
-          <IconWrapper size={sizeIcon}>
-            <GrProjects />
-          </IconWrapper>
+          <div>
+            <IconWrapper size={sizeIcon}>
+              <GrProjects />
+            </IconWrapper>
+          </div>
           <div>Проекты</div>
         </NavLink>
         <div className="flex-1" />
         <a href="/logout">
-          <IconWrapper size={sizeIcon}>
-            <RiLogoutBoxLine />
-          </IconWrapper>
+          <div>
+            <IconWrapper size={sizeIcon}>
+              <RiLogoutBoxLine />
+            </IconWrapper>
+          </div>
           <div>Выход</div>
         </a>
         <div className="flex-1" />

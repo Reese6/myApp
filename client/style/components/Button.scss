@@ -16,9 +16,10 @@
   & > svg {
     height: 1.3rem !important;
     width: 1.3rem !important;
+    margin-left: -0.11rem;
   }
   & svg + span {
-    margin-left: 0.5rem;
+    margin-left: 0.3rem;
   }
 
   &.btn--icon {
