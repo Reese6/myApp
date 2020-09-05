@@ -19,7 +19,7 @@ export const fetchUser = () => dispatch => {
           },
         });
       } else if (!window.location.pathname.includes('account')) {
-        window.location = '/account/login/';
+        // window.location = '/account/login/';
       }
     })
     .catch(error => {
