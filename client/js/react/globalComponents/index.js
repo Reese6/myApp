@@ -7,3 +7,4 @@ export { default as IconWrapper } from './IconWrapper';
 export { default as Notification } from './Notification';
 export { default as TitlePage } from './TitlePage';
 export { default as Button } from './Button';
+export { default as Modal } from './Modal';
