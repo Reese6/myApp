@@ -23,11 +23,9 @@ function Projects() {
                   : { backgroundColor: primary_color }
               }
             >
-              <div className="projects__item-bg" />
-              <NavLink to={`/projects/${el.id}`}>
-                <div className="projects__item-title">{el.name}</div>
-                <div className="projects__item-text">{el.description}</div>
-              </NavLink>
+              <NavLink to={`/projects/${el.id}`} />
+              <div className="projects__item-title">{el.name}</div>
+              <div className="projects__item-text">{el.description}</div>
             </li>
           ))}
         </ul>

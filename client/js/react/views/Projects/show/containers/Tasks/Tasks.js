@@ -22,9 +22,6 @@ export default function Tasks() {
     };
   });
 
-  console.log(columns, 'col');
-  console.log(tasks, 'task');
-
   if (columns.length === 0) return <p>У вас пока что нет задач</p>;
 
   return (

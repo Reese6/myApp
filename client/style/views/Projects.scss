@@ -14,31 +14,32 @@
     margin: 0.5rem;
     padding: 0.7rem 1rem;
     border-radius: 5px;
+    color: #fff;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
+    cursor: pointer;
+
     a {
-      color: #fff;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      bottom: 0;
+      transition: background-color 0.3s linear;
+
+      z-index: 2;
     }
 
     &:hover {
 
-      .projects__item-bg {
+      a {
         background-color: rgba(0, 0, 0, 0.5);
       }
     }
-  }
-
-  &__item-bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    bottom: 0;
-    transition: background-color 0.3s linear;
   }
 
   &__item-title {
