@@ -4,7 +4,7 @@ import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 import { TitlePage, Loading } from '~/globalComponents';
 import Projects from '../Projects';
-import New from '../../../new';
+import Form from '../../../form';
 
 function Container() {
   const { path } = useRouteMatch();
@@ -17,7 +17,7 @@ function Container() {
       {!isLoading && !isError && <Projects />}
       <Switch>
         <Route exact path={path.includes('new') ? `${path}` : `${path}/new`}>
-          <New />
+          <Form />
         </Route>
       </Switch>
     </div>

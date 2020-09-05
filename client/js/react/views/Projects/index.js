@@ -3,7 +3,6 @@ import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 import Index from './index/';
 import Show from './show';
-// import New from './new';
 
 export default function Main() {
   const { path } = useRouteMatch();
