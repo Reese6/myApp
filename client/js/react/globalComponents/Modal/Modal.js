@@ -19,7 +19,7 @@ function Modal({ children, title, maxWidth }) {
     <div className={`modal${active ? ' active' : ''}`}>
       <div className="modal__bg" />
       <div className="modal__wrapper" style={{ maxWidth }}>
-        {title && <h4 className="modal__title">{title}</h4>}
+        {title && <h2 className="modal__title">{title}</h2>}
         {children}
       </div>
     </div>
