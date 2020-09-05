@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as TYPES from 'prop-types';
 
-function Modal({ children, title }) {
+function Modal({ children, title, maxWidth }) {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function Modal({ children, title }) {
   return (
     <div className={`modal${active ? ' active' : ''}`}>
       <div className="modal__bg" />
-      <div className="modal__wrapper">
+      <div className="modal__wrapper" style={{ maxWidth }}>
         {title && <h4 className="modal__title">{title}</h4>}
         {children}
       </div>
@@ -28,11 +28,13 @@ function Modal({ children, title }) {
 
 Modal.propTypes = {
   children: TYPES.node.isRequired,
+  maxWidth: TYPES.string,
   title: TYPES.string,
 };
 
 Modal.defaultProps = {
   title: '',
+  maxWidth: '650px',
 };
 
 export default Modal;
