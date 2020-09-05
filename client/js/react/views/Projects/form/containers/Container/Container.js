@@ -1,12 +1,68 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { Modal } from '~/globalComponents';
 
 function Container() {
   return (
-    <div>
-      <Modal>dfsdfsdfsdf</Modal>
-    </div>
+    <Fragment>
+      <Modal>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+        <h1>sdfsdfsdfsdfsd</h1>
+      </Modal>
+    </Fragment>
   );
 }
 

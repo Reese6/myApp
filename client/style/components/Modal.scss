@@ -1,0 +1,34 @@
+%position-abs-all {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.modal {
+  overflow: hidden;
+  @extend %position-abs-all;
+
+  padding: 5.4rem 0 0;
+  display: flex;
+  justify-content: center;
+
+  &__bg {
+    @extend %position-abs-all;
+
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &__wrapper {
+    overflow-y: auto;
+    @extend %with-scroll;
+
+    max-width: 650px;
+    width: 100%;
+    border-radius: 10px;
+    margin-right: 0.5rem;
+    padding: 3.5rem 2rem;
+    background-color: #ffffff;
+  }
+}
