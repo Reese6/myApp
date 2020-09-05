@@ -7,8 +7,6 @@ import { primary_color } from '~/styleConstants';
 function Projects() {
   const { projects } = useSelector(state => state);
 
-  console.log(projects);
-
   return (
     <Fragment>
       {projects.length > 0 && (

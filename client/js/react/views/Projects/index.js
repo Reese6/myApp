@@ -3,7 +3,7 @@ import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 import Index from './index/';
 import Show from './show';
-import New from './new';
+// import New from './new';
 
 export default function Main() {
   const { path } = useRouteMatch();
@@ -14,7 +14,7 @@ export default function Main() {
         <Index />
       </Route>
       <Route exact path={`${path}/new`}>
-        <New />
+        <Index />
       </Route>
       <Route exact path={`${path}/:id`}>
         <Show />
