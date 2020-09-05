@@ -6,10 +6,7 @@ from main.models import Project, Task, Column
 
 
 def index(request):
-    if not request.user.is_authenticated:
-        return redirect('/account/login')
-    else:
-        return render(request, 'main/index.html')
+    return render(request, 'main/index.html')
 
 
 def show(request, project_id):

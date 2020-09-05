@@ -10,6 +10,7 @@ export const fetchUser = () => dispatch => {
       }
     })
     .then(data => {
+      console.log(window.location);
       if (data.status) {
         dispatch({
           type: ACTION_TYPES.RECEIVED_USER_SUCCESS,
@@ -17,6 +18,8 @@ export const fetchUser = () => dispatch => {
             user: data.user,
           },
         });
+      } else if (!window.location.pathname.includes('account')) {
+        window.location = '/account/login/';
       }
     })
     .catch(error => {

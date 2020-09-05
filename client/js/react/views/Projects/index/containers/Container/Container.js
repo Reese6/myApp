@@ -16,7 +16,7 @@ function Container() {
       {isLoading && <Loading />}
       {!isLoading && !isError && <Projects />}
       <Switch>
-        <Route path={path.includes('new') ? `${path}` : `${path}/new`}>
+        <Route exact path={path.includes('new') ? `${path}` : `${path}/new`}>
           <New />
         </Route>
       </Switch>
