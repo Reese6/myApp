@@ -15,6 +15,9 @@ export default function Main() {
       <Route exact path={`${path}/new`}>
         <Index />
       </Route>
+      <Route exact path={`${path}/:id/edit`}>
+        <Index />
+      </Route>
       <Route exact path={`${path}/:id`}>
         <Show />
       </Route>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, useRouteMatch, useParams } from 'react-router-dom';
 
 import { TitlePage, Loading } from '~/globalComponents';
 import Projects from '../Projects';
@@ -8,6 +8,7 @@ import Form from '../../../form';
 
 function Container() {
   const { path } = useRouteMatch();
+  const { id } = useParams();
   const { isLoading, isError } = useSelector(state => state);
 
   return (
@@ -17,6 +18,9 @@ function Container() {
       {!isLoading && !isError && <Projects />}
       <Switch>
         <Route exact path={path.includes('new') ? `${path}` : `${path}/new`}>
+          <Form />
+        </Route>
+        <Route exact path={`${path}/${id}/edit`}>
           <Form />
         </Route>
       </Switch>
