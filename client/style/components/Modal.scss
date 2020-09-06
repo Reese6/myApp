@@ -7,28 +7,61 @@
 }
 
 .modal {
-  overflow: hidden;
   @extend %position-abs-all;
 
-  padding: 5.4rem 0 0;
   display: flex;
   justify-content: center;
 
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.3s linear;
+
+  &.active {
+    opacity: 1;
+
+    .modal__content {
+      margin-top: 0;
+    }
+  }
+
   &__bg {
     @extend %position-abs-all;
+    z-index: 1;
 
-    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
   &__wrapper {
+    flex: 1;
+    padding: 5.4rem 0;
+
     overflow-y: auto;
     @extend %with-scroll;
 
+    &::-webkit-scrollbar {
+      width: 0.7rem;
+    }
+  }
+  &__content {
+    margin: -350px auto 0;
     width: 100%;
-    flex: auto;
     border-radius: 10px;
     padding: 2rem;
     background-color: #ffffff;
+    transition: all 0.3s linear;
+    z-index: 2;
+
+    &-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+
+      cursor: pointer;
+    }
   }
 
   &__title {

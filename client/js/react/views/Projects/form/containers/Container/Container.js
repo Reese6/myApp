@@ -5,7 +5,7 @@ import { Modal } from '~/globalComponents';
 function Container() {
   return (
     <Fragment>
-      <Modal title="Создание проекта">
+      <Modal title="Создание проекта" close="/projects">
         <h1>sdfsdfsdfsdfsd</h1>
       </Modal>
     </Fragment>
