@@ -4,7 +4,6 @@ import { Column, Task } from './components';
 
 export default function Tasks() {
   const { columns, tasks } = useSelector(state => {
-    console.log(state);
     const modifyTasks = state.tasks.reduce((ac, el) => {
       if (!ac[el.column_id]) {
         ac[el.column_id] = [el];

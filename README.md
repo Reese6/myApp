@@ -11,9 +11,9 @@
 \
 `sudo apt install nodejs`
 \
-`git clone git@github.com:Reese6/myApp.git`
+`git clone git@github.com:Reese6/CWork.git`
 \
-`cd myApp`
+`cd CWork`
 \
 `npm install`
 \
