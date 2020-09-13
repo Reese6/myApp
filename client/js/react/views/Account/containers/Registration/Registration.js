@@ -63,7 +63,7 @@ export default function Registration() {
     setLoading(true);
     const form = document.getElementsByTagName('form')[0];
 
-    const response = await fetch('/accounts/signup', {
+    const response = await fetch('/accounts/signup/', {
       method: 'post',
       body: new FormData(form),
     });

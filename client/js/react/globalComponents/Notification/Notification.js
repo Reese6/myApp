@@ -9,18 +9,19 @@ import { IconWrapper } from '~/globalComponents';
 function Notification({ text, remove, type }) {
   return (
     <Fragment>
-      <IconWrapper
-        classNames="notification__icon-info"
-        size={type === 'error' ? '1.9rem' : '1.6rem'}
-      >
-        {type === 'info' && <FaInfoCircle />}
-        {type === 'succes' && <FaCheckCircle />}
-        {type === 'error' && <IoIosWarning />}
-      </IconWrapper>
+      <div className="notification__icon-info">
+        <IconWrapper size={type === 'error' ? '1.9rem' : '1.6rem'}>
+          {type === 'info' && <FaInfoCircle />}
+          {type === 'succes' && <FaCheckCircle />}
+          {type === 'error' && <IoIosWarning />}
+        </IconWrapper>
+      </div>
       <div className="notification__text">{text}</div>
-      <IconWrapper classNames="notification__icon-close" onClick={remove}>
-        <GrFormClose />
-      </IconWrapper>
+      <div className="notification__icon-close" onClick={remove}>
+        <IconWrapper>
+          <GrFormClose />
+        </IconWrapper>
+      </div>
     </Fragment>
   );
 }
