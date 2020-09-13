@@ -3,7 +3,7 @@
 \
 `sudo pip install --upgrade pip`
 \
-`sudo apt-get install postgresql postgresql-server-dev-9.5`
+`sudo apt-get install postgresql libpq-dev`
 \
 `sudo pip install virtualenv`
 \
