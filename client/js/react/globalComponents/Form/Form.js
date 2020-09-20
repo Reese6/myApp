@@ -4,9 +4,9 @@ import * as TYPES from 'prop-types';
 import { getToken } from '~/helpers';
 import { InputGroup } from '~/globalComponents';
 
-function Form({ children, method, action, onSubmit }) {
+function Form({ children, method, action, classNames, onSubmit }) {
   return (
-    <form method={method} action={action} onSubmit={onSubmit}>
+    <form method={method} action={action} className={classNames} onSubmit={onSubmit}>
       <InputGroup name={getToken().name} value={getToken().value} hidden />
       {children}
     </form>
@@ -15,6 +15,7 @@ function Form({ children, method, action, onSubmit }) {
 
 Form.propTypes = {
   children: TYPES.node.isRequired,
+  classNames: TYPES.string,
   method: TYPES.string,
   action: TYPES.string,
   onSubmit: TYPES.func,
@@ -22,6 +23,7 @@ Form.propTypes = {
 
 Form.defaultProps = {
   action: '',
+  classNames: '',
   method: 'post',
   onSubmit: () => {},
 };
